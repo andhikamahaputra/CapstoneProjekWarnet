@@ -13,7 +13,7 @@ Aplikasi ini akan dikembangkan dengan sistem multi-peran (*multi-role*) untuk me
 - **Manajemen Penuh:** Memiliki akses penuh ke semua fitur manajemen warnet dan kasir.
 - **Kontrol Akses:** Hanya admin yang dapat menambah, mengedit, dan menghapus data master seperti Komputer dan Produk.
 
-### 2. Panel Penjaga Warnet (Rangga karisma)
+### 2. Panel Penjaga Warnet (Rangga kharisma)
 - **Dashboard Operasional:** Fokus pada status komputer secara *real-time* (tersedia, terpakai, *maintenance*) dan statistik sesi harian.
 - **Manajemen Sesi:** Dapat memulai dan mengelola sesi billing baru untuk pelanggan.
 - **Akses Terbatas:** Tidak dapat mengedit atau menghapus data master untuk menjaga keamanan.
