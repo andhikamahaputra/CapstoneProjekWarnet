@@ -42,7 +42,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini secara lokal.
 
 1.  **Clone Repositori**
     ```bash
-    git clone [https://github.com/HisyamIkhwana/Projek-laravel-kelompok1.git](https://github.com/HisyamIkhwana/Projek-laravel-kelompok1.git)
+    git clone https://github.com/HisyamIkhwana/Projek-laravel-kelompok1.git
     cd Projek-laravel-kelompok1
     ```
 
