@@ -12,7 +12,8 @@ Route::post('/pesan/store', [PesanController::class, 'store'])->name('pesan.stor
 
 require __DIR__.'/auth.php';
 
-Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
