@@ -45,7 +45,7 @@ class SesiController extends Controller
 
         $komputer = Komputer::find($validated['komputer_id']);
         if($komputer) {
-            $komputer->status = 'terpakai';
+            $komputer->status = false;
             $komputer->save();
         }
 
@@ -85,7 +85,7 @@ class SesiController extends Controller
         if (now()->lt($sesi->waktu_selesai)) {
             $komputer = Komputer::find($sesi->komputer_id);
             if($komputer) {
-                $komputer->status = 'tersedia';
+                $komputer->status = true;
                 $komputer->save();
             }
         }
