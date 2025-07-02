@@ -37,6 +37,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/kasir/menu', [ProdukController::class, 'store'])->name('kasir.menu.store'); 
     Route::put('/kasir/menu/{produk}', [ProdukController::class, 'update'])->name('kasir.menu.update'); 
     Route::delete('/kasir/menu/{produk}', [ProdukController::class, 'destroy'])->name('kasir.menu.destroy'); 
+use App\Http\Controllers\WarnetController;
+use App\Http\Controllers\KomputerController;
+use App\Http\Controllers\SesiController;
+
+    Route::middleware(['auth', 'role:warnet,admin'])->prefix('warnet')->group(function () {
+    Route::get('/', [WarnetController::class, 'index'])->name('warnet.index');
+    Route::resource('komputer', KomputerController::class);
+    Route::resource('sesi', SesiController::class);
+    Route::post('sesi/{sesi}/stop', [SesiController::class, 'stop'])->name('sesi.stop');
+});
+
+
 });
 
 
