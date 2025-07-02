@@ -4,21 +4,20 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Schema; // Import the Schema facade
 
 class ProdukSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-
+        Schema::disableForeignKeyConstraints();
         DB::table('produks')->truncate();
-
-        DB::table('item_pesanans')->truncate();
-        DB::table('pesanans')->truncate();
-        DB::table('transaksis')->truncate();
-
-        DB::table('produks')->insert([
+        
+        $produkData = [
+            // === MAKANAN ===
             [
                 'nama' => 'Indomie Goreng Telor',
                 'deskripsi' => 'Indomie goreng jumbo dengan telur mata sapi.',
@@ -26,8 +25,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'makanan',
                 'icon' => '🍜',
                 'stok' => 50,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Indomie Rebus Telor',
@@ -36,8 +33,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'makanan',
                 'icon' => '🍲',
                 'stok' => 50,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Nasi Goreng Spesial',
@@ -46,8 +41,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'makanan',
                 'icon' => '🍚',
                 'stok' => 25,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Roti Bakar Coklat Keju',
@@ -56,8 +49,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'makanan',
                 'icon' => '🍞',
                 'stok' => 30,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
 
             // === MINUMAN ===
@@ -68,8 +59,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'minuman',
                 'icon' => '🧊',
                 'stok' => 100,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Kopi ABC Susu Panas',
@@ -78,8 +67,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'minuman',
                 'icon' => '☕',
                 'stok' => 100,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Good Day Freeze',
@@ -88,8 +75,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'minuman',
                 'icon' => '🥤',
                 'stok' => 80,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Coca-cola Dingin',
@@ -98,8 +83,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'minuman',
                 'icon' => '🍾',
                 'stok' => 60,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
 
             // === SNACK ===
@@ -110,8 +93,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'snack',
                 'icon' => '🥔',
                 'stok' => 40,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Taro Net',
@@ -120,8 +101,6 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'snack',
                 'icon' => '🥠',
                 'stok' => 70,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
             [
                 'nama' => 'Kacang Garuda',
@@ -130,11 +109,16 @@ class ProdukSeeder extends Seeder
                 'kategori' => 'snack',
                 'icon' => '🥜',
                 'stok' => 50,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
             ],
-        ]);
+        ];
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        foreach ($produkData as &$produk) {
+            $produk['created_at'] = now();
+            $produk['updated_at'] = now();
+        }
+
+        DB::table('produks')->insert($produkData);
+
+        Schema::enableForeignKeyConstraints();
     }
 }
