@@ -1,6 +1,6 @@
-# Proyek Laravel Kelompok 1 (Aplikasi Manajemen Warnet)
+# Proyek Laravel (Aplikasi Manajemen Warnet)
 
-Selamat datang di repositori Proyek Kelompok 1. Proyek ini bertujuan untuk membangun sebuah aplikasi web lengkap untuk manajemen warnet menggunakan **Laravel**. Aplikasi ini mengadaptasi fungsionalitas dari proyek `WarnetApp`.
+Selamat datang di repositori Proyek. Proyek ini bertujuan untuk membangun sebuah aplikasi web lengkap untuk manajemen warnet menggunakan **Laravel**. Aplikasi ini mengadaptasi fungsionalitas dari proyek `WarnetApp`.
 
 Tujuan dari proyek ini adalah untuk memahami dan mengimplementasikan fitur-fitur seperti manajemen billing komputer, sistem kasir (Point of Sale), dan halaman pemesanan untuk pelanggan, sambil bekerja secara kolaboratif menggunakan Git.
 
@@ -8,23 +8,23 @@ Tujuan dari proyek ini adalah untuk memahami dan mengimplementasikan fitur-fitur
 
 Aplikasi ini akan dikembangkan dengan sistem multi-peran (*multi-role*) untuk memisahkan tanggung jawab dan akses.
 
-### 1. Panel Admin (Hisyam Ikhwana)
+### 1. Panel Admin
 - **Dashboard Utama:** Menampilkan ringkasan pendapatan total, jumlah transaksi, status komputer, dan jumlah produk.
 - **Manajemen Penuh:** Memiliki akses penuh ke semua fitur manajemen warnet dan kasir.
 - **Kontrol Akses:** Hanya admin yang dapat menambah, mengedit, dan menghapus data master seperti Komputer dan Produk.
 
-### 2. Panel Penjaga Warnet (Rangga kharisma)
+### 2. Panel Penjaga Warnet
 - **Dashboard Operasional:** Fokus pada status komputer secara *real-time* (tersedia, terpakai, *maintenance*) dan statistik sesi harian.
 - **Manajemen Sesi:** Dapat memulai dan mengelola sesi billing baru untuk pelanggan.
 - **Akses Terbatas:** Tidak dapat mengedit atau menghapus data master untuk menjaga keamanan.
 
-### 3. Panel Kasir (Andika Mahaputra)
+### 3. Panel Kasir
 - **Point of Sale (POS):** Antarmuka kasir yang intuitif untuk menangani pesanan *walk-in*.
 - **Manajemen Menu:** Mengelola produk makanan, minuman, dan snack.
 - **Konfirmasi Pesanan:** Melihat dan mengonfirmasi pesanan yang masuk dari pelanggan secara online.
 - **Riwayat Transaksi:** Melihat semua riwayat transaksi penjualan yang telah selesai.
 
-### 4. Halaman Pelanggan (Anita Nurul)
+### 4. Halaman Pelanggan
 - **Menu Online:** Halaman publik di mana pelanggan dapat melihat semua menu yang tersedia.
 - **Pemesanan Mandiri:** Pelanggan dapat memesan langsung dari PC mereka.
 - **Keranjang Belanja Interaktif:** Antarmuka yang mudah digunakan untuk menambah dan mengelola item pesanan.
